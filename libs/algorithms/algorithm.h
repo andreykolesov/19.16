@@ -9,4 +9,7 @@ void swapMaxMinRows(matrix *m);
 // сортирует строки матрицы m по неубыванию наибольших элементов строк
 void sortRowsByMaxElem(matrix *m);
 
+// сортирует столбцы матрицы по неубыванию минимальных элементов столбцов
+void sortColsByMinElem(matrix *m);
+
 #endif

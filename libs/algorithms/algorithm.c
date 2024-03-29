@@ -1,13 +1,13 @@
 #include "algorithm.h"
 
-void swapMaxMinRows(matrix *m){
+void swapMaxMinRows(matrix *m) {
     position max_value = getMaxValuePos(*m);
     position min_value = getMinValuePos(*m);
 
     swapRows(*m, max_value.rowIndex, min_value.rowIndex);
 }
 
-int getMax(int *a, const int n){
+int getMax(int *a, const int n) {
     int max = a[0];
 
     for (int i = 0; i < n; i++)
@@ -17,6 +17,20 @@ int getMax(int *a, const int n){
     return max;
 }
 
-void sortRowsByMaxElem(matrix *m){
+void sortRowsByMaxElem(matrix *m) {
     insertionSortRowsMatrixByRowCriteria(*m, getMax);
+}
+
+int getMin(int *a, const int n) {
+    int min = a[0];
+
+    for (int i = 0; i < n; i++)
+        if (a[i] < min)
+            min = a[i];
+
+    return min;
+}
+
+void sortColsByMinElem(matrix *m){
+    selectionSortColsMatrixByColCriteria(*m, getMin);
 }
