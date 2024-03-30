@@ -609,6 +609,31 @@ void test_countNonDescendingRowsMatrices(){
     test_countNonDescendingRowsMatrices_3_some_rows_are_not_ordered_in_non_decreasing_order();
 }
 
+void test_countZeroRows_1_standard_values(){
+    matrix m = createMatrixFromArray((int[]) {0, 0,
+                                                0, 0,
+                                                4, 7}, 3, 2);
+
+    assert(countZeroRows(m) == 2);
+
+    freeMemMatrix(&m);
+}
+
+void test_countZeroRows_2_without_zero_rows(){
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                                4, 5, 6,
+                                                7, 8, 9}, 3, 3);
+
+    assert(countZeroRows(m) == 0);
+
+    freeMemMatrix(&m);
+}
+
+void test_countZeroRows(){
+    test_countZeroRows_1_standard_values();
+    test_countZeroRows_2_without_zero_rows();
+}
+
 int main() {
     test_swapMaxMinRows();
     test_sortRowsByMaxElem();
@@ -624,6 +649,7 @@ int main() {
     test_getNSpecialElement();
     test_swapPenultimateRow();
     test_countNonDescendingRowsMatrices();
+    test_countZeroRows();
 
     return 0;
 }
