@@ -204,12 +204,12 @@ void test_mulMatrices() {
 
 void test_getSquareOfMatrixIfSymmetric_1_symmetric_matrix() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 2, 5, 6,
-                                                 3, 6, 9}, 3, 3);
+                                              2, 5, 6,
+                                              3, 6, 9}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {14, 30, 42,
-                                                     30, 65, 90,
-                                                     42, 90, 126}, 3, 3);
+                                                  30, 65, 90,
+                                                  42, 90, 126}, 3, 3);
 
     getSquareOfMatrixIfSymmetric(&m);
 
@@ -222,12 +222,12 @@ void test_getSquareOfMatrixIfSymmetric_1_symmetric_matrix() {
 
 void test_getSquareOfMatrixIfSymmetric_2_not_symmetric_matrix() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 4, 5, 6,
-                                                 7, 8, 9}, 3, 3);
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {1, 2, 3,
-                                                     4, 5, 6,
-                                                     7, 8, 9}, 3, 3);
+                                                  4, 5, 6,
+                                                  7, 8, 9}, 3, 3);
 
     getSquareOfMatrixIfSymmetric(&m);
 
@@ -240,12 +240,12 @@ void test_getSquareOfMatrixIfSymmetric_2_not_symmetric_matrix() {
 
 void test_getSquareOfMatrixIfSymmetric_3_e_matrix() {
     matrix m = createMatrixFromArray((int[]) {1, 0, 0,
-                                                 0, 1, 0,
-                                                 0, 0, 1}, 3, 3);
+                                              0, 1, 0,
+                                              0, 0, 1}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {1, 0, 0,
-                                                     0, 1, 0,
-                                                     0, 0, 1}, 3, 3);
+                                                  0, 1, 0,
+                                                  0, 0, 1}, 3, 3);
 
     getSquareOfMatrixIfSymmetric(&m);
 
@@ -262,12 +262,54 @@ void test_getSquareOfMatrixIfSymmetric() {
     test_getSquareOfMatrixIfSymmetric_3_e_matrix();
 }
 
+void test_transposeIfMatrixHasNotEqualSumOfRows_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 4, 7,
+                                                  2, 5, 8,
+                                                  3, 6, 9}, 3, 3);
+
+    transposeIfMatrixHasNotEqualSumOfRows(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+
+void test_transposeIfMatrixHasNotEqualSumOfRows_2_not_different_sum() {
+    matrix m = createMatrixFromArray((int[]) {1, 1, 1,
+                                              4, 5, 6,
+                                              0, 3, 0}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 1, 1,
+                                                  4, 5, 6,
+                                                  0, 3, 0}, 3, 3);
+
+    transposeIfMatrixHasNotEqualSumOfRows(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+
+void test_transpose_if_matrix_has_not_equal_sum_of_rows() {
+    test_transposeIfMatrixHasNotEqualSumOfRows_1_standard_value();
+    test_transposeIfMatrixHasNotEqualSumOfRows_2_not_different_sum();
+}
+
 int main() {
     test_swapMaxMinRows();
     test_sortRowsByMaxElem();
     test_sortColsByMinElem();
     test_mulMatrices();
     test_getSquareOfMatrixIfSymmetric();
+    test_transpose_if_matrix_has_not_equal_sum_of_rows();
 
     return 0;
 }

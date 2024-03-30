@@ -49,3 +49,6 @@
 76	159	7334127877372698	untitled3.exe	cf4f1c48eedd7900
 2	84	7334130504713531	CMakeFiles/untitled3.dir/main.c.obj	e223ba408a24c5a0
 84	167	7334130505503592	untitled3.exe	cf4f1c48eedd7900
+2	333	7334932773981367	CMakeFiles/untitled3.dir/libs/algorithms/algorithm.c.obj	7b6e1be593dd1b1f
+26	333	7334932773981367	CMakeFiles/untitled3.dir/main.c.obj	e223ba408a24c5a0
+333	689	7334932777518460	untitled3.exe	cf4f1c48eedd7900
