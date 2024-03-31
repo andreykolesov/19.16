@@ -100,4 +100,14 @@ int matrixNorm(matrix m);
 // находит и выводит матрицы с наименьшей нормой
 void printMinNormMatrix(matrix *ms, int nMatrix);
 
+// возвращает минимальный элемент между a и b
+int min2(int a, int b);
+
+// возвращает true, если элемент массива a является "особым", иначе false
+bool isSpecial(int *a, int n, int index);
+
+// возвращает количество "особых" элементов матрицы m
+// элемент считается особым, если в строке слева от него находятся только меньшие элементы, а справа большие
+int getNSpecialElement2(matrix m);
+
 #endif

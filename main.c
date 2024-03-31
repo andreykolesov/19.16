@@ -664,10 +664,40 @@ void test_matrixNorm_3_some_elements_are_negative() {
     freeMemMatrix(&m);
 }
 
-void test_matrixNorm(){
+void test_matrixNorm() {
     test_matrixNorm_1_all_elements_are_positive();
     test_matrixNorm_2_all_elements_are_negative();
     test_matrixNorm_3_some_elements_are_negative();
+}
+
+void test_getNSpecialElement2_1_have_special_element() {
+    matrix m = createMatrixFromArray((int[]) {2, 3, 5, 5, 4,
+                                              6, 2, 3, 8, 12,
+                                              12, 12, 2, 1, 2}, 3, 5);
+
+    int result = getNSpecialElement2(m);
+
+    assert(result == 4);
+
+    freeMemMatrix(&m);
+}
+
+void test_getNSpecialElement2_2_not_have_special_element() {
+    matrix m = createMatrixFromArray((int[]) {3, 2, 5, 5, 4,
+                                              6, 2, 3, 12, 9,
+                                              12, 12, 2, 1, 2}, 3, 5);
+
+    int result = getNSpecialElement2(m);
+
+    assert(result == 0);
+
+    freeMemMatrix(&m);
+}
+
+
+void test_getNSpecialElement2() {
+    test_getNSpecialElement2_1_have_special_element();
+    test_getNSpecialElement2_2_not_have_special_element();
 }
 
 int main() {
@@ -687,6 +717,7 @@ int main() {
     test_countNonDescendingRowsMatrices();
     test_countZeroRows();
     test_matrixNorm();
+    test_getNSpecialElement2();
 
     return 0;
 }
