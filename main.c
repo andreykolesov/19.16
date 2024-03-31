@@ -415,12 +415,12 @@ void test_getMinInArea() {
 
 void test_sortByDistance_1_different_distance() {
     matrix m = createMatrixFromArray((int[]) {2, 2, 2,
-                                                 3, 3, 3,
-                                                 1, 1, 1}, 3, 3);
+                                              3, 3, 3,
+                                              1, 1, 1}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {1, 1, 1,
-                                                     2, 2, 2,
-                                                     3, 3, 3}, 3, 3);
+                                                  2, 2, 2,
+                                                  3, 3, 3}, 3, 3);
 
     sortByDistances(&m);
 
@@ -433,12 +433,12 @@ void test_sortByDistance_1_different_distance() {
 
 void test_sortByDistance_2_equal_distance() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 2, 1, 3,
-                                                 3, 1, 2}, 3, 3);
+                                              2, 1, 3,
+                                              3, 1, 2}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {1, 2, 3,
-                                                     2, 1, 3,
-                                                     3, 1, 2}, 3, 3);
+                                                  2, 1, 3,
+                                                  3, 1, 2}, 3, 3);
 
     sortByDistances(&m);
 
@@ -456,9 +456,9 @@ void test_sortByDistance() {
 
 void test_countEqClassesByRowsSum_1_different_sum() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 4, 5, 6,
-                                                 7, 8, 9,
-                                                 12, 1, 2}, 4, 3);
+                                              4, 5, 6,
+                                              7, 8, 9,
+                                              12, 1, 2}, 4, 3);
 
 
     int result = countEqClassesByRowsSum(m);
@@ -471,9 +471,9 @@ void test_countEqClassesByRowsSum_1_different_sum() {
 
 void test_countEqClassesByRowsSum_2_all_sum_different() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 4, 5, 6,
-                                                 7, 8, 9,
-                                                 10, 11, 12}, 4, 3);
+                                              4, 5, 6,
+                                              7, 8, 9,
+                                              10, 11, 12}, 4, 3);
 
 
     int result = countEqClassesByRowsSum(m);
@@ -486,9 +486,9 @@ void test_countEqClassesByRowsSum_2_all_sum_different() {
 
 void test_countEqClassesByRowsSum_3_equal_sum() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 1, 3, 2,
-                                                 2, 1, 3,
-                                                 2, 3, 1}, 4, 3);
+                                              1, 3, 2,
+                                              2, 1, 3,
+                                              2, 3, 1}, 4, 3);
 
 
     int result = countEqClassesByRowsSum(m);
@@ -507,8 +507,8 @@ void test_countEqClassesByRowsSum() {
 
 void test_getNSpecialElement_1_standard_value() {
     matrix m = createMatrixFromArray((int[]) {3, 5, 5, 4,
-                                                 2, 3, 6, 7,
-                                                 12, 2, 1, 2}, 3, 4);
+                                              2, 3, 6, 7,
+                                              12, 2, 1, 2}, 3, 4);
 
     int result = getNSpecialElement(m);
 
@@ -520,8 +520,8 @@ void test_getNSpecialElement_1_standard_value() {
 
 void test_getNSpecialElement_2_not_have_special_element() {
     matrix m = createMatrixFromArray((int[]) {3, 5, 5, 4,
-                                                 2, 3, 6, 2,
-                                                 3, 2, 1, 2}, 3, 4);
+                                              2, 3, 6, 2,
+                                              3, 2, 1, 2}, 3, 4);
 
     int result = getNSpecialElement(m);
 
@@ -538,12 +538,12 @@ void test_getNSpecialElement() {
 
 void test_swapPenultimateRow_1_standard_value() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                 4, 5, 6,
-                                                 7, 8, 1}, 3, 3);
+                                              4, 5, 6,
+                                              7, 8, 1}, 3, 3);
 
     matrix check = createMatrixFromArray((int[]) {1, 2, 3,
-                                                     1, 4, 7,
-                                                     7, 8, 1}, 3, 3);
+                                                  1, 4, 7,
+                                                  7, 8, 1}, 3, 3);
 
     swapPenultimateRow(&m);
 
@@ -573,7 +573,7 @@ void test_swapPenultimateRow() {
     test_swapPenultimateRow_2_one_row();
 }
 
-void test_countNonDescendingRowsMatrices_1_standard_values(){
+void test_countNonDescendingRowsMatrices_1_standard_values() {
     int values[] = {7, 1, 1, 1, 1, 6, 2, 2, 5,
                     4, 2, 3, 1, 3, 7, 9};
     matrix *ms = createArrayOfMatrixFromArray(values, 4, 2, 2);
@@ -583,7 +583,7 @@ void test_countNonDescendingRowsMatrices_1_standard_values(){
     freeMemMatrices(ms, 4);
 }
 
-void test_countNonDescendingRowsMatrices_2_rows_are_ordered_in_non_decreasing_order(){
+void test_countNonDescendingRowsMatrices_2_rows_are_ordered_in_non_decreasing_order() {
     int values[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
                     14, 15, 16, 17, 18};
     matrix *ms = createArrayOfMatrixFromArray(values, 2, 3, 3);
@@ -593,7 +593,7 @@ void test_countNonDescendingRowsMatrices_2_rows_are_ordered_in_non_decreasing_or
     freeMemMatrices(ms, 2);
 }
 
-void test_countNonDescendingRowsMatrices_3_some_rows_are_not_ordered_in_non_decreasing_order(){
+void test_countNonDescendingRowsMatrices_3_some_rows_are_not_ordered_in_non_decreasing_order() {
     int values[] = {5, 4, 3, 2, 1, 0, 9, 8, 7, 10, 11, 12, 15,
                     14, 13, 18, 17, 16};
     matrix *ms = createArrayOfMatrixFromArray(values, 2, 3, 3);
@@ -603,35 +603,71 @@ void test_countNonDescendingRowsMatrices_3_some_rows_are_not_ordered_in_non_decr
     freeMemMatrices(ms, 2);
 }
 
-void test_countNonDescendingRowsMatrices(){
+void test_countNonDescendingRowsMatrices() {
     test_countNonDescendingRowsMatrices_1_standard_values();
     test_countNonDescendingRowsMatrices_2_rows_are_ordered_in_non_decreasing_order();
     test_countNonDescendingRowsMatrices_3_some_rows_are_not_ordered_in_non_decreasing_order();
 }
 
-void test_countZeroRows_1_standard_values(){
+void test_countZeroRows_1_standard_values() {
     matrix m = createMatrixFromArray((int[]) {0, 0,
-                                                0, 0,
-                                                4, 7}, 3, 2);
+                                              0, 0,
+                                              4, 7}, 3, 2);
 
     assert(countZeroRows(m) == 2);
 
     freeMemMatrix(&m);
 }
 
-void test_countZeroRows_2_without_zero_rows(){
+void test_countZeroRows_2_without_zero_rows() {
     matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                                4, 5, 6,
-                                                7, 8, 9}, 3, 3);
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
 
     assert(countZeroRows(m) == 0);
 
     freeMemMatrix(&m);
 }
 
-void test_countZeroRows(){
+void test_countZeroRows() {
     test_countZeroRows_1_standard_values();
     test_countZeroRows_2_without_zero_rows();
+}
+
+void test_matrixNorm_1_all_elements_are_positive() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
+
+    assert(matrixNorm(m) == 9);
+
+    freeMemMatrix(&m);
+}
+
+void test_matrixNorm_2_all_elements_are_negative() {
+    matrix m = createMatrixFromArray((int[]) {-1, -2, -3,
+                                              -4, -5, -6,
+                                              -7, -8, -9}, 3, 3);
+
+    assert(matrixNorm(m) == 9);
+
+    freeMemMatrix(&m);
+}
+
+void test_matrixNorm_3_some_elements_are_negative() {
+    matrix m = createMatrixFromArray((int[]) {-1, -2, -3,
+                                              -4, 5, 10,
+                                              -7, -8, 9}, 3, 3);
+
+    assert(matrixNorm(m) == 10);
+
+    freeMemMatrix(&m);
+}
+
+void test_matrixNorm(){
+    test_matrixNorm_1_all_elements_are_positive();
+    test_matrixNorm_2_all_elements_are_negative();
+    test_matrixNorm_3_some_elements_are_negative();
 }
 
 int main() {
@@ -650,6 +686,7 @@ int main() {
     test_swapPenultimateRow();
     test_countNonDescendingRowsMatrices();
     test_countZeroRows();
+    test_matrixNorm();
 
     return 0;
 }
