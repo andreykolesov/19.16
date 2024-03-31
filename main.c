@@ -735,6 +735,37 @@ void test_getVectorIndexWithMaxAngle() {
     test_getVectorIndexWithMaxAngle_2_equal_angle();
 }
 
+void test_getSpecialScalarProduct_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {4, 2, 3,
+                                                 3, 1, 2,
+                                                 2, 2, 3}, 3, 3);
+
+    long long int result = getSpecialScalarProduct(m);
+
+    assert(result == 16);
+
+    freeMemMatrix(&m);
+}
+
+
+void test_getSpecialScalarProduct_2_max_min_element_in_equal_row_and_col() {
+    matrix m = createMatrixFromArray((int[]) {4, 1, 3,
+                                                 3, 2, 2,
+                                                 2, 2, 3}, 3, 3);
+
+    long long int result = getSpecialScalarProduct(m);
+
+    assert(result == 12);
+
+    freeMemMatrix(&m);
+}
+
+
+void test_getSpecialScalarProduct() {
+    test_getSpecialScalarProduct_1_standard_value();
+    test_getSpecialScalarProduct_2_max_min_element_in_equal_row_and_col();
+}
+
 int main() {
     test_swapMaxMinRows();
     test_sortRowsByMaxElem();
@@ -749,11 +780,13 @@ int main() {
     test_countEqClassesByRowsSum();
     test_getNSpecialElement();
     test_swapPenultimateRow();
+    // функции с выводом были протестированы вручную
     test_countNonDescendingRowsMatrices();
     test_countZeroRows();
     test_matrixNorm();
     test_getNSpecialElement2();
     test_getVectorIndexWithMaxAngle();
+    test_getSpecialScalarProduct();
 
     return 0;
 }
