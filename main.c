@@ -766,7 +766,7 @@ void test_getSpecialScalarProduct() {
     test_getSpecialScalarProduct_2_max_min_element_in_equal_row_and_col();
 }
 
-int main() {
+void test() {
     test_swapMaxMinRows();
     test_sortRowsByMaxElem();
     test_sortColsByMinElem();
@@ -787,6 +787,10 @@ int main() {
     test_getNSpecialElement2();
     test_getVectorIndexWithMaxAngle();
     test_getSpecialScalarProduct();
+}
+
+int main(){
+    test();
 
     return 0;
 }
