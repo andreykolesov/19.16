@@ -110,4 +110,16 @@ bool isSpecial(int *a, int n, int index);
 // элемент считается особым, если в строке слева от него находятся только меньшие элементы, а справа большие
 int getNSpecialElement2(matrix m);
 
+// возвращает скалярное произведение двух векторов (массивов) a и b
+double getScalarProduct(int *a, int *b, int n);
+
+// возвращает длину вектора a
+double getVectorLength(int *a, int n);
+
+// возвращает косинус угла между двумя векторами
+double getCosine(int *a, int *b, int n);
+
+// возвращает индекс вектора, который образует максимальный угол с данным вектором v
+int getVectorIndexWithMaxAngle(matrix m, int *v);
+
 #endif
